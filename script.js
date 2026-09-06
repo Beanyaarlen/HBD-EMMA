@@ -2,8 +2,8 @@ const $ = (selector) => document.querySelector(selector);
 
 // ====== PERSONALISASI CEPAT ======
 const CONFIG = {
-  name: 'Sayang', // ganti nama di sini
-  letterName: 'Sayang',
+  name: 'Cayang', // ganti nama di sini
+  letterName: 'Cayang',
 };
 
 $('#birthdayName').textContent = `${CONFIG.name}!`;

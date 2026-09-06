@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffd84d" />
+  <meta name="description" content="Kejutan ulang tahun bertema Usagi dengan animasi karakter yang meledak dan memantul." />
+  <title>Usagi Birthday Surprise! 🐰💛</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-dots" aria-hidden="true"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div id="usagiLayer" class="usagi-layer" aria-hidden="true"></div>
+  <p id="effectStatus" class="sr-only" aria-live="polite"></p>
+
+  <header class="hero" id="home">
+    <nav class="nav shell" aria-label="Navigasi utama">
+      <a class="brand" href="#home">USAGI DAY<span>★</span></a>
+      <div class="nav-actions">
+        <button class="icon-btn" id="musicBtn" type="button" aria-label="Putar musik" aria-pressed="false">♫</button>
+      </div>
+    </nav>
+
+    <div class="hero-inner shell">
+      <div class="hero-copy reveal">
+        <div class="mini-tag">TODAY IS YOUR DAY! 💛</div>
+        <h1>Happy Birthday,<br /><span id="birthdayName">My Favorite Human!</span></h1>
+        <p>
+          Semoga hari ini penuh tawa, makanan enak, hadiah lucu,
+          dan energi heboh ala Usagi sepanjang hari. ✨
+        </p>
+      </div>
+
+      <div class="launcher-wrap reveal delay-1" aria-label="Pelontar kejutan Usagi">
+        <div class="spark spark-one" aria-hidden="true">✦</div>
+        <div class="spark spark-two" aria-hidden="true">★</div>
+        <div class="spark spark-three" aria-hidden="true">✧</div>
+        <div class="launcher-card">
+          <div class="orbit orbit-one" aria-hidden="true"></div>
+          <div class="orbit orbit-two" aria-hidden="true"></div>
+          <div class="launcher-center">
+            <strong>23</strong>
+            <span>TAHUN</span>
+          </div>
+          <p>SIAP<br />MELEDAK!</p>
+          <div class="launcher-badge">YAHAAA!!</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-note">scroll for more ↓</div>
+  </header>
+
+  <main>
+    <section class="section shell" id="message">
+      <div class="section-title reveal">
+        <span>01</span>
+        <div>
+          <p>A LITTLE NOTE</p>
+          <h2>For the birthday girl 💌</h2>
+        </div>
+      </div>
+
+      <div class="letter-experience reveal delay-1" id="letterExperience">
+        <div class="letter-gate">
+          <div class="envelope-emoji" aria-hidden="true">💌</div>
+          <p>Ada pesan kecil yang menunggu dibuka.</p>
+          <button
+            class="main-btn open-letter-btn"
+            id="openLetterBtn"
+            type="button"
+            aria-controls="letterPaper"
+            aria-expanded="false"
+          >
+            <span>✦</span> Buka Surat
+          </button>
+        </div>
+
+        <div class="letter-paper-wrap" id="letterPaper" aria-hidden="true">
+          <article class="letter-card" tabindex="-1">
+            <div class="tape" aria-hidden="true"></div>
+            <p class="letter-kicker">Dear <span id="letterName">you</span>,</p>
+            <p>
+              Selamat ulang tahun yang ke-23, Sayang. Terima kasih karena sudah
+              menemani aku selama 2 tahun 11 bulan. Waktu selama itu bukan waktu yang
+              sebentar. Kita sudah melewati begitu banyak hal: hari-hari yang lucu,
+              obrolan random, momen sederhana yang bikin bahagia, perdebatan, air mata,
+              rasa capek, sampai saat-saat ketika kita berdua mungkin bertanya apakah
+              hubungan ini masih bisa terus diperjuangkan.
+            </p>
+            <p>
+              Di antara semua yang sudah terjadi, kamu tetap menjadi orang yang punya
+              tempat sangat penting di hidupku. Aku bersyukur untuk semua perhatianmu,
+              kesabaranmu, cara kamu mengingat hal-hal kecil, dan keberanianmu untuk
+              mengatakan apa yang sebenarnya kamu rasakan, bahkan ketika cara kita
+              menyampaikannya belum selalu sempurna.
+            </p>
+            <p>
+              Aku juga ingin menggunakan surat ini untuk benar-benar mengakui bagian
+              yang pernah membuatmu terluka. Aku sadar ada saat ketika aku ingin pergi,
+              nongkrong, mengikuti acara, atau menginap, tetapi justru membuatmu menjadi
+              orang yang harus menentukan apakah aku boleh atau tidak. Ketika jawabanmu
+              tidak sesuai dengan keinginanku, aku bisa terlihat kecewa atau terus
+              mendesakmu untuk memilih. Itu tidak adil untukmu. Keputusan dan
+              tindakanku seharusnya menjadi tanggung jawabku, bukan beban yang aku
+              pindahkan kepadamu.
+            </p>
+            <p>
+              Aku mengerti bahwa yang membuatmu takut bukan sekadar soal aku pergi
+              bersama teman atau orang gereja. Yang lebih menyakitkan adalah ketika aku
+              terlihat tidak terbuka, pura-pura bingung, pura-pura tidak tahu, atau baru
+              mengatakan sesuatu setelah kamu bertanya berkali-kali. Walaupun mungkin
+              niatku bukan untuk menyakitimu, sikap seperti itu tetap membuatmu merasa
+              ada sesuatu yang disembunyikan dan membuat rasa amanmu semakin berkurang.
+              Untuk semua itu, aku minta maaf.
+            </p>
+            <p>
+              Aku juga tahu overthinking bukan tombol yang bisa kamu matikan begitu
+              saja. Aku tidak ingin lagi membuatmu merasa bersalah hanya karena kamu
+              takut kehilangan aku. Perasaanmu perlu didengar, bukan dianggap sebagai
+              gangguan. Pada saat yang sama, aku ingin kita pelan-pelan membangun cara
+              berkomunikasi yang lebih tenang, supaya kamu tidak harus memendam semuanya
+              sampai meledak dan aku tidak memilih diam atau menghindar ketika
+              percakapan terasa sulit.
+            </p>
+
+            <div class="promise-note">
+              <p><strong>Di umurmu yang baru, ini yang ingin aku janjikan lewat tindakan:</strong></p>
+              <ul>
+                <li>
+                  Aku akan menjelaskan rencanaku dengan jujur sejak awal—aku pergi ke
+                  mana, bersama siapa, sampai jam berapa, dan apakah ada perubahan atau
+                  kemungkinan menginap.
+                </li>
+                <li>
+                  Aku tidak akan lagi memaksamu menjadi orang yang mengambil keputusan
+                  untukku, lalu kecewa ketika pilihanmu tidak sesuai dengan keinginanku.
+                </li>
+                <li>
+                  Jika ada perempuan di sebuah acara atau tempat menginap, aku akan
+                  mengatakannya dengan jelas. Aku tidak akan menutupi informasi atau
+                  berlindung di balik alasan lupa dan tidak tahu.
+                </li>
+                <li>
+                  Aku akan menghormati batasan yang kita sepakati bersama. Jika sebuah
+                  situasi memang membuat hubungan kita tidak aman, aku akan berani
+                  mengambil pilihan yang menjaga kepercayaan kita.
+                </li>
+                <li>
+                  Ketika kamu sedang takut atau overthinking, aku akan berusaha
+                  mendengarkan lebih dahulu sebelum membela diri, menjelaskan dengan
+                  sabar, dan tidak menggunakan kalimat seolah-olah kamu sudah tidak
+                  sayang hanya karena kamu sedang diam atau kecewa.
+                </li>
+                <li>
+                  Jika aku melakukan kesalahan, aku akan mengakuinya dengan jelas,
+                  meminta maaf tanpa mencari alasan, dan menunjukkan perubahannya secara
+                  konsisten—bukan hanya lewat kata-kata.
+                </li>
+              </ul>
+            </div>
+
+            <p>
+              Aku sadar promise ring tidak akan berarti banyak kalau janji di belakangnya
+              tidak terlihat dalam sikap sehari-hari. Karena itu aku tidak mau meminta
+              kamu langsung percaya hanya karena membaca surat ini. Aku ingin mendapatkan
+              kembali dan menjaga kepercayaanmu lewat hal-hal kecil yang aku lakukan
+              berulang kali. Janjiku bukan bahwa aku tidak akan pernah salah lagi, tetapi
+              aku tidak akan lari, berpura-pura bingung, atau menyerahkan seluruh beban
+              penyelesaiannya kepadamu ketika aku salah.
+            </p>
+            <p>
+              Gereja, teman-teman, dan kegiatan lain memang menjadi bagian dari hidupku,
+              tetapi semuanya tidak seharusnya membuatmu merasa harus bersaing untuk
+              mendapatkan rasa aman dan kejujuran dariku. Aku ingin hubungan ini menjadi
+              tempat kita berdua bisa bertumbuh tanpa kehilangan diri sendiri, sekaligus
+              tetap saling mempertimbangkan dalam setiap pilihan penting.
+            </p>
+            <p>
+              Terima kasih karena sudah bertahan, mengingatkan, dan tetap mencoba selama
+              2 tahun 11 bulan ini. Aku tahu mencintai bukan hanya tentang bertahan lama,
+              tetapi juga tentang belajar menjadi pasangan yang lebih aman, lebih jujur,
+              dan lebih dewasa. Aku masih ingin belajar melakukan itu bersamamu.
+            </p>
+            <p>
+              Di hari ulang tahunmu, aku berharap umur 23 membawa lebih banyak ketenangan,
+              kesehatan, keberanian, mimpi yang tercapai, dan alasan untuk tersenyum.
+              Semoga kamu selalu tahu bahwa kamu berharga, bukan hanya ketika semuanya
+              berjalan baik, tetapi juga ketika kamu sedang lelah, takut, dan merasa
+              tidak baik-baik saja. Aku sayang kamu, dan aku ingin rasa sayang itu semakin
+              terlihat dari caraku memperlakukanmu.
+            </p>
+            <p class="letter-sign">
+              With lots of love,<br />
+              <strong>orang yang masih mau terus belajar mencintaimu dengan lebih baik ♡</strong>
+            </p>
+            <div class="letter-actions">
+              <button class="main-btn repeat-btn" id="repeatSurpriseBtn" type="button">
+                🎉 Ulangi Kejutan!
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="finale">
+      <div class="shell finale-inner reveal">
+        <p>ONE MORE TIME...</p>
+        <h2>HAPPY BIRTHDAY!!</h2>
+        <span>Semoga tahun ini jadi salah satu tahun terbaikmu. 💛</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>Made with ♡, sugar, chaos &amp; Usagi energy.</footer>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/birthday-song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
